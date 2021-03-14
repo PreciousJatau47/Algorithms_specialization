@@ -52,15 +52,11 @@ class Solution:
             return x*y
 
         # find a, b, c, d
-        # 1024
-        #  a = 1024 // 10^2 = 10
-        #  b = 1024 % 10^2 = 24
         n = n//2
         a = x//10**n
         b = x % 10**n
         c = y//10**n
         d = y % 10**n
-        print("a = {}, b = {}, c = {}, d = {}".format(a,b,c, d))
 
         # recursive calls
         ac = self.KaratsubaMxHelper(a,c,n)
@@ -71,21 +67,15 @@ class Solution:
         return 10**(2*n) * ac + 10**n *(apb_cpd -ac - bd) + bd
 
 
-
-
-
 def main():
-    x = 9999#234
-    y = 9999#121
-
-    # 99 9 99 9
+    x = 3141592653589793238462643383279502884197169399375105820974944592
+    y = 2718281828459045235360287471352662497757247093699959574966967627
 
     soln = Solution()
 
     print("x*y = ", x*y)
     print("Karatsuba solution: ", soln.KaratsubaMx(x,y))
     print("Correct? ", x*y == soln.KaratsubaMx(x,y))
-
 
 
 main()
